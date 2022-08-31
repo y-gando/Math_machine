@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+    <style>
+        
+        body {
+            background-color: rgb(42, 42, 42);
+        }
+
+        p {
+            color: azure;
+        }
+
+    </style>
+  </head>
+  <body>
+    <p>練習用</p>
+
+    <button>起動する</button>
+    <p>マシンは停止中です。</p>
+
+    <script>
+
+        // btnにボタンエレメントを代入
+        const btn = document.querySelector('button');
+        // txtにpタグ要素を代入
+        const txt = document.querySelector('p');
+        // クリックされたらボタンをアップデートする
+        btn.addEventListener('click', updateBtn);
+
+        // updateBtnという関数を定義
+        function updateBtn() {
+            // btnに入力されたテキストが'起動する'と同等だった場合
+            if (btn.textContent === '起動する') {
+                // btnに'停止する'の文字列が代入される
+                btn.textContent = '停止する';
+                // txtには'マシンが起動しました！'の文字列が代入される
+                txt.textContent = 'マシンが起動しました！';
+                //　上記条件に当てはまらなかった場合
+            } else {
+                // btnに'起動する'の文字列が代入される
+                btn.textContent = '起動する';
+                // txtには'マシンは停止中です。'の文字列が代入される
+                txt.textContent = 'マシンは停止中です。';
+        }
+        }
+
+    </script>
+
+  </body>
+</html>
+
+
+
